@@ -1,0 +1,51 @@
+@use "variables" as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.button-start {
+  width: 500px;
+  height: 100px;
+  font-size: 50px;
+  padding: 5px 15px;
+  border-radius: 15px;
+  color: white;
+  background-color: v.$selected-color;
+  transition: all 0.3s ease;
+  border: none;
+
+  &:hover {
+    opacity: 80%;
+  }
+}
+
+.tab {
+  color: white;
+  flex-grow: 1;
+  border: none;
+  background-color: v.$unselected-color;
+  padding: 0.5rem;
+
+  &.active {
+    background-color: v.$selected-color;
+  }
+}
+
+.column {
+  width: vw / 3;
+}
+
+.card {
+  min-height: 100px;
+  width: 250px;
+  padding: 1rem;
+  border: 2px v.$unselected-color solid;
+  border-radius: 10px;
+  margin: {
+    top: 0.5rem;
+    bottom: 0.5rem;
+  }
+}
