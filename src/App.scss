@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
 .button-start {
   width: 500px;
   height: 100px;
@@ -24,7 +29,7 @@
 
 .tab {
   color: white;
-  flex-grow: 1;
+  width: 100%;
   border: none;
   background-color: v.$unselected-color;
   padding: 0.5rem;
@@ -35,7 +40,8 @@
 }
 
 .column {
-  width: vw / 3;
+  display: flex;
+  justify-content: center;
 }
 
 .card {
