@@ -8,7 +8,6 @@
 
 ::-webkit-scrollbar {
   width: 0;
-  background: transparent;
 }
 
 .button-start {
@@ -29,6 +28,8 @@
 
 .tab {
   color: white;
+  display: block;
+  text-align: center;
   width: 100%;
   border: none;
   background-color: v.$unselected-color;

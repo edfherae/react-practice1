@@ -1,33 +1,35 @@
 import { useEffect, useState } from "react";
 import { type Comment, type User, type Post } from "../../models/models";
+import { NavLink, useParams } from "react-router";
 
 function Tab({
-  isActive,
+  tabName,
   onClick,
   children,
 }: {
-  isActive: boolean;
+  tabName: "users" | "posts" | "comments";
   onClick: () => void;
   children: string;
 }) {
   return (
-    <button className={`tab ${isActive ? "active" : ""}`} onClick={onClick}>
+    <NavLink to={`/content/${tabName}`} className={`tab`} onClick={onClick}>
       {children}
-    </button>
+    </NavLink>
   );
 }
 
 export default function ContentPage() {
-  const [currentTab, setCurrentTab] = useState<
-    null | "users" | "posts" | "comments"
-  >(null);
+  const { tab } = useParams<{ tab: "users" | "posts" | "comments" }>();
+  // const [currentTab, setCurrentTab] = useState<
+  //   null | "users" | "posts" | "comments"
+  // >(null);
   const [response, setResponse] = useState<null | User[] | Post[] | Comment[]>(
     null,
   );
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    switch (currentTab) {
+    switch (tab) {
       case "users":
         setIsLoading(true);
         console.log("fetching");
@@ -71,7 +73,7 @@ export default function ContentPage() {
           .finally(() => setIsLoading(false));
         break;
     }
-  }, [currentTab]);
+  }, [tab]);
 
   return (
     <>
@@ -81,17 +83,16 @@ export default function ContentPage() {
       >
         <div className="grid-container">
           <Tab
-            isActive={currentTab === "users"}
+            tabName={"users"}
             onClick={() => {
               setResponse(null);
-              setCurrentTab("users");
             }}
           >
             Users
           </Tab>
           <section className="column">
-            {isLoading && <p>Loading...</p>}
-            {currentTab === "users" && response && (
+            {isLoading && tab === "users" && <p>Loading...</p>}
+            {tab === "users" && response && (
               <div>
                 {(response as User[]).map((user) => (
                   <div className="card" key={user.id}>
@@ -108,18 +109,17 @@ export default function ContentPage() {
 
         <div className="grid-container">
           <Tab
-            isActive={currentTab === "posts"}
+            tabName={"posts"}
             onClick={() => {
               setResponse(null);
-              setCurrentTab("posts");
             }}
           >
             Posts
           </Tab>
 
           <section className="column">
-            {isLoading && <p>Loading...</p>}
-            {currentTab === "posts" && response && (
+            {isLoading && tab === "posts" && <p>Loading...</p>}
+            {tab === "posts" && response && (
               <div>
                 {(response as Post[]).map((post) => (
                   <div className="card" key={post.id}>
@@ -134,17 +134,16 @@ export default function ContentPage() {
 
         <div className="grid-container">
           <Tab
-            isActive={currentTab === "comments"}
+            tabName={"comments"}
             onClick={() => {
               setResponse(null);
-              setCurrentTab("comments");
             }}
           >
             Comments
           </Tab>
           <section className="column">
-            {isLoading && <p>Loading...</p>}
-            {currentTab === "comments" && response && (
+            {isLoading && tab === "comments" && <p>Loading...</p>}
+            {tab === "comments" && response && (
               <div>
                 {(response as Comment[]).map((comment) => (
                   <div className="card" key={comment.id}>
