@@ -9,9 +9,7 @@ export default function App() {
     <>
       <Routes>
         <Route index element={<WelcomePage />} />
-        <Route path="content" element={<ContentPage />}>
-          <Route path=""></Route>
-        </Route>
+        <Route path="content" element={<ContentPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
