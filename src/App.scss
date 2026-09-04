@@ -6,8 +6,13 @@
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-  width: 0;
+// ::-webkit-scrollbar {
+//   width: 0;
+// }
+
+h3,
+p {
+  margin-bottom: 0.5rem;
 }
 
 .button-start {
@@ -26,10 +31,16 @@
   }
 }
 
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .tab {
   color: white;
   display: block;
   text-align: center;
+  text-decoration: none;
   width: 100%;
   border: none;
   background-color: v.$unselected-color;
@@ -42,7 +53,8 @@
 
 .column {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card {
