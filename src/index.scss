@@ -59,7 +59,7 @@ p {
 
 .card {
   min-height: 100px;
-  width: 250px;
+  min-width: 250px;
   padding: 1rem;
   border: 2px v.$unselected-color solid;
   border-radius: 10px;
