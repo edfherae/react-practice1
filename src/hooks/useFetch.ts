@@ -9,6 +9,7 @@ export default function useFetch<T>(url: string, dependencies: any[] = []) {
   useEffect(() => {
     setData(null);
     setError(null);
+    setIsLoading(true);
 
     const controller = new AbortController();
     const fetchData = async () => {
@@ -27,7 +28,7 @@ export default function useFetch<T>(url: string, dependencies: any[] = []) {
           else setError(`Ошибка ${e.name}, ${e.message}`);
         }
       } finally {
-        setIsLoading(false);
+        if (!controller.signal.aborted) setIsLoading(false);
       }
     };
     fetchData();
