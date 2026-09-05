@@ -27,7 +27,9 @@ export default function PostsSection({
             <div
               className="card"
               key={post.id}
-              onClick={() => setSelectedPostId(post.id)}
+              onClick={() =>
+                setSelectedPostId((prev) => (prev === post.id ? null : post.id))
+              }
             >
               <h3>{post.title}</h3>
               <p>{post.body}</p>
