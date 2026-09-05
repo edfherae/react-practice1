@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import useFetch from "../hooks/useFetch";
 import type { Post, Comment } from "../models/models";
 

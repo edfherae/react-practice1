@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import UsersSection from "../UsersSection";
 import PostsSection from "../PostsSection";
 import CommentsSection from "../CommentsSection";
-import Tab from "../tab";
+import Tab from "../Tab";
 
 export default function ContentPage() {
   const { tab } = useParams<{ tab: "users" | "posts" | "comments" }>();
