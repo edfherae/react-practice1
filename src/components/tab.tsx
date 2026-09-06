@@ -1,10 +1,11 @@
 import { NavLink } from "react-router";
+import type { TabName } from "../types";
 
 export default function Tab({
   tabName,
   children,
 }: {
-  tabName: "users" | "posts" | "comments";
+  tabName: TabName;
   children: string;
 }) {
   return (

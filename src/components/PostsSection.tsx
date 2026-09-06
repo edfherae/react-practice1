@@ -1,15 +1,12 @@
 import { useState } from "react";
 import useFetch from "../hooks/useFetch";
 import type { Post, Comment } from "../models/models";
+import type { TabName } from "../types/index";
 
-export default function PostsSection({
-  tab,
-}: {
-  tab: "users" | "posts" | "comments";
-}) {
+export default function PostsSection({ tabName }: { tabName: TabName }) {
   const { data, isLoading, error } = useFetch<Post[]>(
-    `https://jsonplaceholder.typicode.com/${tab}`,
-    [tab],
+    `https://jsonplaceholder.typicode.com/${tabName}`,
+    [tabName],
   );
 
   const [selectedPostId, setSelectedPostId] = useState<number | null>(null);

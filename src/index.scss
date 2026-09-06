@@ -15,6 +15,13 @@ p {
   margin-bottom: 0.5rem;
 }
 
+.welcome-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
 .button-start {
   width: 500px;
   height: 100px;

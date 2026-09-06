@@ -1,14 +1,11 @@
 import useFetch from "../hooks/useFetch";
 import type { User } from "../models/models";
+import type { TabName } from "../types";
 
-export default function UsersSection({
-  tab,
-}: {
-  tab: "users" | "posts" | "comments";
-}) {
+export default function UsersSection({ tabName }: { tabName: TabName }) {
   const { data, isLoading, error } = useFetch<User[]>(
-    `https://jsonplaceholder.typicode.com/${tab}`,
-    [tab],
+    `https://jsonplaceholder.typicode.com/${tabName}`,
+    [tabName],
   );
 
   return (

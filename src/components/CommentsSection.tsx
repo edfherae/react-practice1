@@ -1,14 +1,15 @@
 import useFetch from "../hooks/useFetch";
 import type { Comment } from "../models/models";
+import type { TabName } from "../types";
 
 export default function CommentsSection({
-  tab,
+  tabName: tabName,
 }: {
-  tab: "users" | "posts" | "comments";
+  tabName: TabName;
 }) {
   const { data, isLoading, error } = useFetch<Comment[]>(
-    `https://jsonplaceholder.typicode.com/${tab}`,
-    [tab],
+    `https://jsonplaceholder.typicode.com/${tabName}`,
+    [tabName],
   );
 
   return (
