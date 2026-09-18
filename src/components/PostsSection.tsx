@@ -11,13 +11,9 @@ export default function PostsSection({ tabName }: { tabName: TabName }) {
     <>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      {!isLoading && data && (
-        <div>
-          {data.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
-        </div>
-      )}
+      {!isLoading &&
+        data &&
+        data.map((post) => <PostCard key={post.id} post={post} />)}
     </>
   );
 }

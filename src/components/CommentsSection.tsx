@@ -10,17 +10,15 @@ export default function CommentsSection({ tabName }: { tabName: TabName }) {
     <>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      {!isLoading && data && (
-        <div>
-          {data.map((comment) => (
-            <div className="card" key={comment.id}>
-              <p>User {comment.email}:</p>
-              <h3>{comment.name}</h3>
-              <p>{comment.body} </p>
-            </div>
-          ))}
-        </div>
-      )}
+      {!isLoading &&
+        data &&
+        data.map((comment) => (
+          <div className="card" key={comment.id}>
+            <p>User {comment.email}:</p>
+            <h3>{comment.name}</h3>
+            <p>{comment.body} </p>
+          </div>
+        ))}
     </>
   );
 }
