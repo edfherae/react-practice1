@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 export default function useFetch<T>(url: string) {
-  //сохранять в мапу, lazy loading, scroll к каждому контейнеру
   const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

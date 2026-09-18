@@ -3,11 +3,7 @@ import type { Comment } from "../models/models";
 import type { TabName } from "../types";
 import { API_JPH_URL as URL } from "../config/env";
 
-export default function CommentsSection({
-  tabName: tabName,
-}: {
-  tabName: TabName;
-}) {
+export default function CommentsSection({ tabName }: { tabName: TabName }) {
   const { data, isLoading, error } = useFetch<Comment[]>(`${URL}/${tabName}`);
 
   return (
