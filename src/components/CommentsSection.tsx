@@ -9,7 +9,6 @@ export default function CommentsSection({
 }) {
   const { data, isLoading, error } = useFetch<Comment[]>(
     `https://jsonplaceholder.typicode.com/${tabName}`,
-    [tabName],
   );
 
   return (
