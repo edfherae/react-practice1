@@ -2,13 +2,14 @@ import useFetch from "../hooks/useFetch";
 import type { Comment } from "../models/models";
 import type { TabName } from "../types";
 import { API_JPH_URL as URL } from "../config/env";
+import Loader from "./Loader";
 
 export default function CommentsSection({ tabName }: { tabName: TabName }) {
   const { data, isLoading, error } = useFetch<Comment[]>(`${URL}/${tabName}`);
 
   return (
     <>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loader />}
       {error && <p>{error}</p>}
       {!isLoading &&
         data &&

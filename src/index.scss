@@ -110,3 +110,11 @@ p {
     opacity: 80%;
   }
 }
+
+.loader {
+  background-color: v.$selected-color;
+  color: white;
+  padding: 5px 25px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
