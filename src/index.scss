@@ -79,3 +79,27 @@ p {
     bottom: 0.5rem;
   }
 }
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.button {
+  width: max-content;
+  height: 25px;
+  border-radius: 5px;
+  padding: 5px 15px;
+  color: white;
+  background-color: v.$selected-color;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 80%;
+  }
+}
