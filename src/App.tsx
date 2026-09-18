@@ -1,8 +1,7 @@
-import { Route, Routes } from "react-router";
-import WelcomePage from "./components/pages/WelcomePage";
-import ContentPage from "./components/pages/ContentPage";
-import NotFoundPage from "./components/pages/NotFoundPage";
-import "./App.scss";
+import { Route, Routes } from "react-router-dom";
+import WelcomePage from "./pages/WelcomePage";
+import ContentPage from "./pages/ContentPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
   return (
