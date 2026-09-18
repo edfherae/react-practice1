@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useFetch<T>(url: string, dependencies: any[] = []) {
+export default function useFetch<T>(url: string) {
   //сохранять в мапу, lazy loading, scroll к каждому контейнеру
   const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +34,7 @@ export default function useFetch<T>(url: string, dependencies: any[] = []) {
     fetchData();
 
     return () => controller.abort();
-  }, [url, ...dependencies]);
+  }, [url]);
 
   return { data, isLoading, error };
 }
