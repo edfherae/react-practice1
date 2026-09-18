@@ -1,9 +1,10 @@
 import useFetch from "../hooks/useFetch";
 import type { Comment } from "../models/models";
+import { API_JPH_URL as URL } from "../config/env";
 
 export default function PostComments({ postId }: { postId: number }) {
   const { data, isLoading, error } = useFetch<Comment[]>(
-    `https://jsonplaceholder.typicode.com/comments?postId=${postId}`,
+    `${URL}/comments?postId=${postId}`,
   );
 
   return (
