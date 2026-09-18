@@ -42,9 +42,16 @@ p {
   }
 }
 
-.content-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.tab-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  padding: 0.25rem 10rem;
 }
 
 .tab {

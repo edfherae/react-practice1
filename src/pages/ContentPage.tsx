@@ -16,21 +16,15 @@ export default function ContentPage() {
 
   return (
     <>
-      <div className="content-grid">
-        <div className="column">
-          <Tab tabName={"users"}>Users</Tab>
-          {tab === "users" && <UsersSection tabName={tab} />}
-        </div>
-
-        <div className="column">
-          <Tab tabName={"posts"}>Posts</Tab>
-          {tab === "posts" && <PostsSection tabName={tab} />}
-        </div>
-
-        <div className="column">
-          <Tab tabName={"comments"}>Comments</Tab>
-          {tab === "comments" && <CommentsSection tabName={tab} />}
-        </div>
+      <div className="tab-container">
+        <Tab tabName={"users"}>Users</Tab>
+        <Tab tabName={"posts"}>Posts</Tab>
+        <Tab tabName={"comments"}>Comments</Tab>
+      </div>
+      <div className="content-container">
+        {tab === "users" && <UsersSection tabName={tab} />}
+        {tab === "posts" && <PostsSection tabName={tab} />}
+        {tab === "comments" && <CommentsSection tabName={tab} />}
       </div>
     </>
   );
