@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import UsersSection from "../components/UsersSection";
 import PostsSection from "../components/PostsSection";
 import CommentsSection from "../components/CommentsSection";

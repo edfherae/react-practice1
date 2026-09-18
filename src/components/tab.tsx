@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 import type { TabName } from "../types";
 
 export default function Tab({
