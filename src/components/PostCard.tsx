@@ -7,8 +7,8 @@ export function PostCard({ post }: { post: Post }) {
 
   return (
     <div className="card">
-      <h3>{post.title}</h3>
-      <p>{post.body}</p>
+      <h3 className="card__title">{post.title}</h3>
+      <p className="card__text">{post.body}</p>
 
       <div className="flex justify-center">
         <button className="button" onClick={() => setIsActive((prev) => !prev)}>

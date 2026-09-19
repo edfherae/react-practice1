@@ -9,7 +9,12 @@ export default function Tab({
   children: string;
 }) {
   return (
-    <NavLink to={`/content/${tabName}`} className={`tab`}>
+    <NavLink
+      to={`/content/${tabName}`}
+      className={({ isActive }) =>
+        isActive ? "tabs__tab tabs__tab--active" : "tabs__tab"
+      }
+    >
       {children}
     </NavLink>
   );

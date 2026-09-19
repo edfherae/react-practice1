@@ -16,12 +16,12 @@ export default function ContentPage() {
 
   return (
     <>
-      <div className="tab-container">
+      <div className="tabs">
         <Tab tabName={"users"}>Users</Tab>
         <Tab tabName={"posts"}>Posts</Tab>
         <Tab tabName={"comments"}>Comments</Tab>
       </div>
-      <div className="content-container">
+      <div className="cards">
         {tab === "users" && <UsersSection tabName={tab} />}
         {tab === "posts" && <PostsSection tabName={tab} />}
         {tab === "comments" && <CommentsSection tabName={tab} />}

@@ -1,7 +1,3 @@
 export default function Loader() {
-  return (
-    <div className="flex justify-center">
-      <p className="loader">Loading...</p>
-    </div>
-  );
+  return <div className="status-bar status-bar--loading">Loading...</div>;
 }
