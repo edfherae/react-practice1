@@ -10,12 +10,12 @@ export function PostCard({ post }: { post: Post }) {
       <h3 className="card__title">{post.title}</h3>
       <p className="card__text">{post.body}</p>
 
-      <div>
+      <div className="cards">
         <button className="button" onClick={() => setIsActive((prev) => !prev)}>
           {`${!isActive ? "Show" : "Hide"} comments`}
         </button>
+        {isActive && <PostComments postId={post.id} />}
       </div>
-      {isActive && <PostComments postId={post.id} />}
     </div>
   );
 }
