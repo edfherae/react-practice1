@@ -10,7 +10,7 @@ export function PostCard({ post }: { post: Post }) {
       <h3 className="card__title">{post.title}</h3>
       <p className="card__text">{post.body}</p>
 
-      <div className="flex justify-center">
+      <div>
         <button className="button" onClick={() => setIsActive((prev) => !prev)}>
           {`${!isActive ? "Show" : "Hide"} comments`}
         </button>
