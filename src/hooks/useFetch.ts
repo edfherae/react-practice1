@@ -16,7 +16,7 @@ export default function useFetch<T>(url: string) {
         const res = await fetch(url, {
           signal: controller.signal,
         });
-        if (!res.ok) setError(`Ошибка ${res.status}`);
+        if (!res.ok) setError(`Ошибка: ${res.status}`);
         else {
           const json = (await res.json()) as T;
           setData(json);
@@ -24,7 +24,7 @@ export default function useFetch<T>(url: string) {
       } catch (e) {
         if (e instanceof Error) {
           if (e.name === "AbortError") console.log(`Отмена запроса ${url}`);
-          else setError(`Ошибка ${e.name}, ${e.message}`);
+          else setError(`Ошибка: ${e.message}`);
         }
       } finally {
         if (!controller.signal.aborted) setIsLoading(false);
